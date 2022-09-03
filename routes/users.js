@@ -1,22 +1,10 @@
-const mongoose = require('mongoose');
-const schemaUser = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: Date,
-        default: Date.now
-    },
-    view: {
-        type: String,
-        default: 'daily'
-    }
-});
+const express = require('express');
+const router = express.Router();
 
-const User = mongoose.model('User',schemaUser);
-module.exports = User;
+const User = require('../models/Users');
+
+router.get('/login',(req,res)=>res.render('login'));
+
+router.get('/register',(req,res)=>res.render('register'));
+
+// router.get('/regis')
