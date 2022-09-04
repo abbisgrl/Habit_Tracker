@@ -30,14 +30,32 @@ body {
 }
 
 #image {
-  width: 75%;
+  width: 65%;
   align-self: center;
+  margin-top: -6px;
+  margin-bottom: 6px;
 }
+
 #container {
   box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
   -webkit-box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
   -moz-box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
+  padding-right: 0px;
+  padding-left: 0px;
 }
+.card {
+  background-color: lightslategrey;
+}
+.greenC {
+  background-color: #39b54a;
+}
+.blueC {
+  background-color: #007bff;
+}
+.tColor {
+  color: honeydew;
+}
+
 .habit-container h2 {
   padding: 10px;
   font-family: "Candal", sans-serif;
