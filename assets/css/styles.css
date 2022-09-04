@@ -36,7 +36,7 @@ body {
   margin-bottom: 6px;
 }
 
-#container {
+.box_shadow{
   box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
   -webkit-box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
   -moz-box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
