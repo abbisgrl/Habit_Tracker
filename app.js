@@ -16,6 +16,18 @@ app.use(expressLayouts);
 app.use('/assets',express.static('./assets'));
 app.set('view engine','ejs');
 
+//------BodyParser--------//
+app.use(express.urlencoded({ extended: false }));
+
+//---------Express Session----------//
+app.use(
+    session({
+        secret: 'secret',
+        resave: true,
+        saveUninitialized: true
+    })
+);
+
 app.use(
     session({
         secret: 'secret',
@@ -32,6 +44,7 @@ app.use(function(req,res,next){
     res.locals.error = req.flash('error');
     next();
 });
+
 
 //Routes
 app.use('/',require('./routes/index'));

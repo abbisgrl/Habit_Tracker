@@ -51,7 +51,7 @@ router.post('/register',(req,res)=>{
 });
 
 router.post('/login',(req,res)=>{
-    const {name,email} = req.body;
+    const {email} = req.body;
 
     User.findOne({
         email:email

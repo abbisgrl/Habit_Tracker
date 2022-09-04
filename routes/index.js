@@ -35,7 +35,7 @@ router.get('/dashboard', (req, res) => {
 });
 
 function getDays(n) {
-    let d = newDate();
+    let d = new Date();
     var newDate = d.toLocaleDateString('pr-br').split('/').reverse().join('-');
     var day;
     switch (d.getDay()) {
@@ -54,7 +54,7 @@ function getDays(n) {
         case 6: day = 'Sat';
             break;
     }
-    return {data:newDate,day};
+    return {date:newDate,day};
 }
 
 router.post('/user-view',(req,res)=>{
