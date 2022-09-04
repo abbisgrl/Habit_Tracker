@@ -13,7 +13,6 @@ mongoose.connect(db,{useNewUrlParser:true,useUnifiedTopology:true})
 app.use(expressLayouts);
 app.set('view engine','ejs');
 
-
 //Routes
 app.use('/',require('./models/Habit'));
 app.use('/users',require('./models/Users'))
