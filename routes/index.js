@@ -87,7 +87,7 @@ router.post('/dashboard',(req,res)=>{
                 if(item.date===today){
                     console.log("Habit Exists")
                     req.flash(
-                        'error_msg',
+                        'error_message',
                         'Habit exists!'
                     );
                     res.redirect('back');
