@@ -1,14 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
+//importing the user and habit models 
 const User = require('../models/Users');
 const Habit = require('../models/Habit');
 
-
+//setting the home page for application
 router.get('/', (req, res) => res.render('welcome'));
 
 var email = "";
 
+//redirecting the dashboard board and it will shown once user will sign in.Days,user and Habit information
+//will send to the dashboard page where it will used
 router.get('/dashboard', (req, res) => {
     email = req.query.user;
     User.findOne({
@@ -34,6 +37,7 @@ router.get('/dashboard', (req, res) => {
     });
 });
 
+//function for getting the date in a formate and return to upper function
 function getDays(n) {
     let d = new Date();
     var newDate = d.toLocaleDateString('pr-br').split('/').reverse().join('-');
@@ -57,6 +61,7 @@ function getDays(n) {
     return {date:newDate,day};
 }
 
+//for changing the schedule to daily and week 
 router.post('/user-view',(req,res)=>{
     User.findOne({
         email
@@ -75,7 +80,7 @@ router.post('/user-view',(req,res)=>{
     })
 })
 
-
+//for taking the content from the field and save in the content and send as habit in dashboard in get dashboard function
 router.post('/dashboard',(req,res)=>{
     const{content} = req.body;
 
@@ -123,7 +128,7 @@ router.post('/dashboard',(req,res)=>{
     });
 });
 
-
+//Adding the task in favorite list .there is no seperate favorite page but star will represent the favorite
 router.get('/favorite-habit',(req,res)=>{
     let id = req.query.id;
     Habit.findOne({
@@ -152,6 +157,7 @@ router.get('/favorite-habit',(req,res)=>{
     });
 });
 
+//for updating the status whether it is complete or incomplete or unmarked
 router.get('/status-update',(req,res)=>{
     var d = req.query.date;
     var id = req.query.id;
@@ -189,6 +195,7 @@ router.get('/status-update',(req,res)=>{
     });
 });
 
+//for delete the task from the list 
 router.get('/remove',(req,res)=>{
     let id = req.query.id;
     Habit.deleteMany({

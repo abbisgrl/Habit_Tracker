@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+
+//schema for collection of user with email,name,date 
 const schemaUser = new mongoose.Schema({
     name: {
         type: String,
@@ -18,5 +20,6 @@ const schemaUser = new mongoose.Schema({
     }
 });
 
+//setting the schemaUser as user model 
 const User = mongoose.model('User',schemaUser);
 module.exports = User;

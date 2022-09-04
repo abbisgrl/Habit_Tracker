@@ -9,6 +9,37 @@ body {
   overflow-y: auto;
 }
 
+#image {
+  width: 65%;
+  align-self: center;
+  margin-top: -6px;
+  margin-bottom: 6px;
+}
+
+/* create box shadow  for register,login and main box */
+.box_shadow {
+  box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
+  -webkit-box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/* Styling the login and register page */
+.card {
+  background-color: lightslategrey;
+}
+.greenC {
+  background-color: #39b54a;
+}
+.blueC {
+  background-color: #007bff;
+}
+.tColor {
+  color: honeydew;
+}
+
+/* Styling the dashboards page */
 .habit-container {
   color: white;
   position: absolute;
@@ -27,34 +58,6 @@ body {
 
 .habit {
   width: 900px;
-}
-
-#image {
-  width: 65%;
-  align-self: center;
-  margin-top: -6px;
-  margin-bottom: 6px;
-}
-
-
-.box_shadow{
-  box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
-  -webkit-box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
-  -moz-box-shadow: -5px -4px 72px 25px rgba(0, 0, 0, 0.73);
-  padding-right: 0px;
-  padding-left: 0px;
-}
-.card {
-  background-color: lightslategrey;
-}
-.greenC {
-  background-color: #39b54a;
-}
-.blueC {
-  background-color: #007bff;
-}
-.tColor {
-  color: honeydew;
 }
 
 .habit-container h2 {
@@ -85,11 +88,10 @@ body {
   list-style: none;
 }
 
-.name{
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-left: -40px;
-
+.name {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-left: -40px;
 }
 
 .habit-list-item {
