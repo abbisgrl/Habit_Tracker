@@ -15,6 +15,8 @@
     "express": "^4.18.1",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
-    "mongoose": "^6.5.4"
+    "mongoose": "^6.5.4",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^3.0.2"
   }
 }

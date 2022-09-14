@@ -5,19 +5,20 @@ const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const flash = require('connect-flash');
 const session = require('express-session');
- 
+
+const PORT = process.env.PORT || 8000;
 //importing the keys and use for connection to mongodb
 const db = require('./config/keys').MongoURI;
 
 //connect to the mongodb 
-mongoose.connect(db,{useNewUrlParser:true,useUnifiedTopology:true})
-.then(()=>console.log("Connected to mongoDB "))
-.catch(err=>console.log(err));
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Connected to mongoDB "))
+    .catch(err => console.log(err));
 
 //layout setting ,view engine setting and setting the assets files
 app.use(expressLayouts);
-app.use('/assets',express.static('./assets'));
-app.set('view engine','ejs');
+app.use('/assets', express.static('./assets'));
+app.set('view engine', 'ejs');
 
 //BodyParser
 app.use(express.urlencoded({ extended: false }));
@@ -42,8 +43,8 @@ app.use(
 
 //flash messages setting 
 app.use(flash());
-app.use(function(req,res,next){
-    res.locals.success_message= req.flash('success_message');
+app.use(function (req, res, next) {
+    res.locals.success_message = req.flash('success_message');
     res.locals.error_message = req.flash('error_message');
     res.locals.error = req.flash('error');
     next();
@@ -51,8 +52,8 @@ app.use(function(req,res,next){
 
 
 //Routes for application 
-app.use('/',require('./routes/index'));
-app.use('/users',require('./routes/users'));
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
 //listen of the application
-app.listen(3000,console.log(`Server is working fine on ${3000}`));
+app.listen(PORT, console.log(`Server is working fine on ${PORT}`));

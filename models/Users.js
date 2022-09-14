@@ -17,9 +17,15 @@ const schemaUser = new mongoose.Schema({
     view: {
         type: String,
         default: 'daily'
+    },
+    
+},{
+    writeConcern: {
+        j: true,
+        wtimeout: 1000
     }
 });
 
 //setting the schemaUser as user model 
-const User = mongoose.model('User',schemaUser);
+const User = mongoose.model('User', schemaUser);
 module.exports = User;
